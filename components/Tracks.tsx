@@ -1,49 +1,49 @@
 const tracks = [
     {
         id: "01",
-        title: "Deepfake Detective",
-        description: "Is that video real? Prove it. Build a tool that flags synthetic media before it goes viral. We're looking for accuracy, not just vibes.",
-        tech: ["OpenCV", "Trust Issues", "48hrs"],
+        title: "Forensic Analysis of Synthetic or Manipulated Media",
+        description: "Design a system that assesses the authenticity or integrity of digital media, particularly when content may have been partially generated, edited, or manipulated.",
+        tech: ["Computer Vision", "Deepfakes", "Cryptography"],
         color: "bg-red-500/10 border-red-500/20",
         tape: "bg-violet-500/30",
     },
     {
         id: "02",
-        title: "Kill The Password",
-        description: "'123456' is not a password. Stop users from hacking themselves. Build auth that actually works without making people hate you.",
-        tech: ["Bio-hacking", "WebAuthn", "No-Login"],
+        title: "Passwordless Authentication & Identity Systems",
+        description: "Design a passwordless authentication system that verifies user identity without shared secrets, while remaining secure across real-world usage scenarios.",
+        tech: ["FIDO2", "Biometrics", "Zero Knowledge"],
         color: "bg-green-500/10 border-green-500/20",
         tape: "bg-fuchsia-500/30",
     },
     {
         id: "03",
-        title: "Secret Keeper",
-        description: "Build an AI that knows secrets but won't spill them. Even when we try to prompt-inject it into oblivion. Good luck.",
-        tech: ["Gaslighting", "RAG", "Security"],
+        title: "Secure Knowledge Access Systems",
+        description: "Design a system that answers user queries over restricted or sensitive information while enforcing access boundaries under ambiguous queries and changing permissions.",
+        tech: ["RAG", "RBAC", "Privacy Preserving AI"],
         color: "bg-blue-500/10 border-blue-500/20",
         tape: "bg-indigo-500/30",
     },
     {
         id: "04",
-        title: "Eternal Sunshine",
-        description: "Make an AI model 'forget' specific data. It's way harder than it sounds. Unlearn the bad stuff without breaking the good stuff.",
-        tech: ["Amnesia", "Math", "Privacy"],
+        title: "Machine Unlearning",
+        description: "Design a system that enables deployed models to selectively remove or reduce the influence of specific data or behaviors over time, without full retraining.",
+        tech: ["Model Editing", "Differential Privacy", "AI Safety"],
         color: "bg-purple-500/10 border-purple-500/20",
         tape: "bg-purple-500/30",
     },
     {
         id: "05",
-        title: "Ghost in the Shell",
-        description: "Find the hacker in the noise. Anomaly detection for systems that are already acting weird. Spot the difference between 'bug' and 'breach'.",
-        tech: ["Mr. Robot", "Wireshark", "Pattern Matching"],
+        title: "Network & System Anomaly Detection",
+        description: "Design a system that distinguishes expected versus problematic behavior in network or system activity, even as normal patterns evolve.",
+        tech: ["Network Security", "Unsupervised Learning", "TimeSeries"],
         color: "bg-orange-500/10 border-orange-500/20",
         tape: "bg-white/10",
     },
     {
         id: "06",
-        title: "It Works on My Machine",
-        description: "Fix the dev pipeline hellscape. If it breaks in prod, it counts. Build tools that stop us from crying during deployment.",
-        tech: ["Docker", "Tears", "Bash"],
+        title: "Developer Pipeline Intelligence",
+        description: "Design a system that improves visibility into software build, test, or deployment pipelines by surfacing failures, inefficiencies, or unexpected behavior.",
+        tech: ["CI/CD", "DevOps", "Log Analysis"],
         color: "bg-zinc-800/50 border-white/10",
         tape: "bg-rose-500/30",
     },
@@ -99,7 +99,7 @@ export default function Tracks() {
 
                             {/* Card Content */}
                             <div className="relative z-10 flex flex-col h-full">
-                                <h3 className="font-serif text-3xl text-white mb-4 leading-none group-hover:text-violet-400 transition-colors">
+                                <h3 className="font-serif text-2xl sm:text-3xl text-white mb-4 leading-tight group-hover:text-violet-400 transition-colors">
                                     {track.title}
                                 </h3>
 

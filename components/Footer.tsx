@@ -1,15 +1,66 @@
+import Link from "next/link";
+
 export default function Footer() {
     return (
-        <footer className="border-t border-white/10 py-12 bg-black text-center relative z-10 glass">
-            <div className="max-w-7xl mx-auto px-6 flex flex-col items-center gap-4">
-                <p className="text-white/40 font-serif tracking-widest text-sm">
-                    DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING
-                </p>
-                <div className="h-px w-24 bg-primary/30"></div>
-                <p className="text-muted-foreground text-xs font-mono">
-                    © {new Date().getFullYear()} Nexus Club. PES University.
-                </p>
+        <footer className="relative border-t border-white/10 bg-black pt-20 pb-10 overflow-hidden">
+
+            {/* Massive Background Text */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center pointer-events-none opacity-[0.03] select-none">
+                <h1 className="text-[15vw] font-serif font-black text-white leading-none tracking-tighter">
+                    NEXJAM
+                </h1>
             </div>
+
+            <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col md:flex-row justify-between items-end gap-12">
+
+                {/* Left Side: Brand & Vibe */}
+                <div className="space-y-6">
+                    <div className="relative inline-block">
+                        <span className="font-serif text-4xl text-white font-bold tracking-tight">NEXJAM</span>
+                        <div className="absolute -top-3 -right-6 bg-violet-600 text-[10px] font-mono font-bold px-2 py-0.5 transform rotate-12 border border-white/20">
+                            VER 2.0
+                        </div>
+                    </div>
+
+                    <p className="text-zinc-500 max-w-sm font-mono text-sm leading-relaxed">
+                        The 10-hour hackathon where sleep is optional and shipping is mandatory.
+                        <br />
+                        <span className="text-violet-400">Department of Computer Science.</span>
+                    </p>
+
+                    <div className="flex gap-4">
+                        {['Instagram', 'Twitter', 'GitHub'].map((social) => (
+                            <Link
+                                key={social}
+                                href="#"
+                                className="text-zinc-400 hover:text-white uppercase text-xs tracking-widest border-b border-transparent hover:border-violet-500 transition-all font-mono"
+                            >
+                                {social}
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Right Side: Legal & "Scrappy" Credits */}
+                <div className="flex flex-col items-start md:items-end gap-4">
+
+                    {/* Rotated "Made With" Badge - NOW USER CREDITS */}
+                    <div className="bg-white text-black font-mono text-xs px-4 py-2 transform -rotate-2 border-2 border-dashed border-zinc-400 shadow-[4px_4px_0px_0px_rgba(139,92,246,0.5)] text-right">
+                        <div className="font-bold uppercase tracking-wider mb-1">Designed & Built By</div>
+                        <div className="text-violet-700 font-black text-sm tracking-tight">MOHIT PADDHARIYA</div>
+                        <div className="text-[9px] text-zinc-600 font-bold tracking-widest mt-0.5">TECH HEAD & WEB DEV HEAD</div>
+                        <div className="text-[9px] text-zinc-500 uppercase tracking-widest">NEXUS CLUB</div>
+                    </div>
+
+                    <p className="text-zinc-600 text-xs font-mono">
+                        © {new Date().getFullYear()} Nexus Club. <span className="text-zinc-500">Don't sue us.</span>
+                    </p>
+                </div>
+
+            </div>
+
+            {/* Bottom Tape Decoration */}
+            <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-violet-900 via-fuchsia-600 to-indigo-900 opacity-50"></div>
         </footer>
     );
 }

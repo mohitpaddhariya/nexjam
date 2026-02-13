@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import Tracks from "@/components/Tracks";
+import Team from "@/components/Team";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 
@@ -15,6 +16,7 @@ export default function Home() {
 
       <Hero />
       <Tracks />
+      <Team />
       <Footer />
     </main>
   );
