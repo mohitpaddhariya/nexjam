@@ -64,7 +64,7 @@ export default function ASCIIBackground() {
                     ctx.shadowColor = "transparent"; // Ensure NO GLOW
                     ctx.shadowBlur = 0;
                 } else {
-                    ctx.fillStyle = "#333333"; // Dimmer grey
+                    ctx.fillStyle = "#1a1a1a"; // Very dim grey
                     ctx.shadowColor = "transparent";
                     ctx.shadowBlur = 0;
                 }
@@ -92,7 +92,7 @@ export default function ASCIIBackground() {
     return (
         <canvas
             ref={canvasRef}
-            className="absolute inset-0 z-0 opacity-60 pointer-events-none mix-blend-screen"
+            className="absolute inset-0 z-0 opacity-40 pointer-events-none mix-blend-screen"
         />
     );
 }

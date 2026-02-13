@@ -1,3 +1,8 @@
+"use client";
+
+import Image from "next/image";
+import { motion } from "motion/react";
+
 const tracks = [
     {
         id: "01",
@@ -57,7 +62,13 @@ export default function Tracks() {
 
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Section Header - Scrappy Style */}
-                <div className="mb-24 relative">
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                    className="mb-24 relative"
+                >
                     <div className="absolute -top-10 -left-10 w-32 h-32 bg-violet-500/10 rounded-full blur-3xl"></div>
 
                     <span className="font-mono text-violet-400 text-sm tracking-widest uppercase mb-4 block rotate-[-2deg] inline-block bg-white/5 px-2 border border-violet-500/30 backdrop-blur-sm">
@@ -74,19 +85,29 @@ export default function Tracks() {
                     </p>
 
                     {/* Sticker Decor */}
-                    <div className="absolute right-0 top-0 hidden md:block rotate-12 opacity-80">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0, rotate: 45 }}
+                        whileInView={{ opacity: 0.8, scale: 1, rotate: 12 }}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+                        viewport={{ once: true }}
+                        className="absolute right-0 top-0 hidden md:block"
+                    >
                         <div className="bg-white/5 text-violet-200 font-bold p-4 text-center shadow-xl transform rotate-3 border border-violet-500/20 backdrop-blur-md">
                             <div className="text-[10px] uppercase tracking-widest border-b border-violet-500/20 pb-1 mb-1">Notice</div>
                             <div className="text-xl font-serif">RTFM FIRST</div>
                         </div>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
 
                 {/* Grid - Scrappy Layout */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 gap-y-16">
                     {tracks.map((track, i) => (
-                        <div
+                        <motion.div
                             key={track.id}
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: i * 0.1 }}
+                            viewport={{ once: true }}
                             className={`group relative p-8 h-full bg-[#111] border border-white/10 transition-all duration-300 hover:z-20 hover:scale-105 hover:rotate-0 hover:shadow-[10px_10px_0px_0px_rgba(139,92,246,0.15)] ${i % 2 === 0 ? 'rotate-1' : '-rotate-1'} ${i % 3 === 0 ? 'rotate-2' : ''}`}
                         >
                             {/* "Tape" Effect */}
@@ -116,17 +137,21 @@ export default function Tracks() {
                                     ))}
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
 
                     {/* "Polaroid" Slot for Real Photo/Vibe */}
-                    <div className="group relative p-4 bg-white rotate-3 hover:rotate-0 transition-transform duration-300 shadow-xl h-full flex flex-col min-h-[300px]">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.8, rotate: 10 }}
+                        whileInView={{ opacity: 1, scale: 1, rotate: 3 }}
+                        transition={{ duration: 0.6, delay: 0.6 }}
+                        viewport={{ once: true }}
+                        className="group relative p-4 bg-white shadow-xl h-full flex flex-col min-h-[300px] hover:rotate-0 transition-transform duration-300 transform rotate-3"
+                    >
                         <div className="bg-zinc-900 w-full h-48 flex items-center justify-center overflow-hidden relative grayscale group-hover:grayscale-0 transition-all duration-500">
                             {/* Placeholder for real photo - keeping it CSS only for now */}
                             <div className="text-zinc-700 font-mono text-xs text-center p-4">
-                                [ INSERT CHAOTIC LAB PHOTO HERE ]
-                                <br />
-                                <span className="opacity-50">.jpg</span>
+                                <Image src="/nexgen.jpg" alt="NexJam 2025 hackathon participants collaborating" width={500} height={500} />
                             </div>
                             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                         </div>
@@ -134,9 +159,9 @@ export default function Tracks() {
                             "Last year's survivors"
                         </div>
                         <div className="absolute -top-4 -right-4 w-12 h-12 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-xs rotate-12 shadow-md">
-                            2024
+                            2025
                         </div>
-                    </div>
+                    </motion.div>
 
                 </div>
             </div>

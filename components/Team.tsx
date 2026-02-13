@@ -1,3 +1,8 @@
+"use client";
+
+import Image from "next/image";
+import { motion } from "motion/react";
+
 const team = [
     {
         name: "AAHANA",
@@ -59,20 +64,30 @@ export default function Team() {
 
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Header */}
-                <div className="mb-20 text-center">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                    className="mb-20 text-center"
+                >
                     <span className="font-mono text-violet-400 text-sm tracking-widest uppercase mb-4 block">
                         // THE_CREW
                     </span>
                     <h2 className="font-serif text-5xl sm:text-7xl text-white tracking-widest uppercase mix-blend-exclusion">
                         ACCOMPLICES
                     </h2>
-                </div>
+                </motion.div>
 
                 {/* Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                     {team.map((member, i) => (
-                        <div
+                        <motion.div
                             key={i}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: i * 0.1 }}
+                            viewport={{ once: true }}
                             className={`group relative flex flex-col items-center ${member.rotation} hover:rotate-0 transition-transform duration-300 hover:z-10`}
                         >
                             {/* "Tape" */}
@@ -82,7 +97,7 @@ export default function Team() {
                             <div className="relative w-full aspect-square bg-zinc-900 border-4 border-white p-2 shadow-xl mb-6 overflow-hidden group-hover:scale-105 transition-transform duration-300">
                                 <div className="w-full h-full bg-zinc-800 relative grayscale group-hover:grayscale-0 transition-all duration-500 overflow-hidden">
                                     {/* Image would go here. Using a placeholder div pattern for now if img fails */}
-                                    <img src={member.image} alt={member.name} className="w-full h-full object-cover opacity-80 group-hover:opacity-100" />
+                                    <Image src={member.image.startsWith("http") ? member.image : `/${member.image}`} alt={`${member.name} — ${member.role} at NexJam`} width={400} height={400} className="w-full h-full object-cover opacity-80 group-hover:opacity-100" />
 
                                     {/* Glitch Overlay */}
                                     <div className="absolute inset-0 bg-violet-500/10 opacity-0 group-hover:opacity-100 mix-blend-overlay transition-opacity"></div>
@@ -98,7 +113,7 @@ export default function Team() {
                                     {member.role}
                                 </p>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>
