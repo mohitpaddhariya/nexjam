@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
+import posthog from "posthog-js";
 
 const team = [
     {
@@ -89,6 +90,12 @@ export default function Team() {
                             transition={{ duration: 0.5, delay: i * 0.1 }}
                             viewport={{ once: true }}
                             className={`group relative flex flex-col items-center ${member.rotation} hover:rotate-0 transition-transform duration-300 hover:z-10`}
+                            onMouseEnter={() => {
+                                posthog.capture("team_member_viewed", {
+                                    member_name: member.name,
+                                    member_role: member.role,
+                                });
+                            }}
                         >
                             {/* "Tape" */}
                             <div className={`absolute -top-3 left-1/2 -translate-x-1/2 w-24 h-6 ${member.tape} backdrop-blur-md -rotate-3 shadow-sm z-20`}></div>

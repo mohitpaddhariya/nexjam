@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
+import posthog from "posthog-js";
 
 export default function Footer() {
     return (
@@ -47,6 +48,12 @@ export default function Footer() {
                                 key={social}
                                 href="#"
                                 className="relative block group"
+                                onClick={() => {
+                                    posthog.capture("social_link_clicked", {
+                                        platform: social.toLowerCase(),
+                                        location: "footer",
+                                    });
+                                }}
                             >
                                 <motion.span
                                     whileHover={{ scale: 1.1, color: "#fff" }}

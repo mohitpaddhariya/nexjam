@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
+import posthog from "posthog-js";
 
 export default function Header() {
     const [scrolled, setScrolled] = useState(false);
@@ -53,6 +54,13 @@ export default function Header() {
                             <Link
                                 href={item.href}
                                 className="relative group text-zinc-400 hover:text-white transition-colors duration-200"
+                                onClick={() => {
+                                    posthog.capture("navigation_link_clicked", {
+                                        link_name: item.name,
+                                        link_href: item.href,
+                                        location: "header",
+                                    });
+                                }}
                             >
                                 <span className="absolute -left-4 opacity-0 group-hover:opacity-100 group-hover:-left-5 transition-all duration-200 text-violet-500 font-black">
                                     &gt;
@@ -74,6 +82,12 @@ export default function Header() {
                         href="https://forms.gle/D21eZFngVmCzSnYb8"
                         target="_blank"
                         className="relative group inline-block focus:outline-none"
+                        onClick={() => {
+                            posthog.capture("registration_cta_clicked", {
+                                location: "header",
+                                button_text: "REGISTER",
+                            });
+                        }}
                     >
                         <span className="relative z-10 block px-8 py-3 overflow-hidden leading-tight font-black font-mono text-base text-black bg-[#FFD700] border-2 border-white transform rotate-2 transition-transform duration-200 group-hover:-rotate-1 group-hover:scale-110 shadow-[4px_4px_0px_rgba(255,255,255,0.2)]">
                             REGISTER

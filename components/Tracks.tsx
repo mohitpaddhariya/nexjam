@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
+import posthog from "posthog-js";
 
 const tracks = [
     {
@@ -109,6 +110,13 @@ export default function Tracks() {
                             transition={{ duration: 0.5, delay: i * 0.1 }}
                             viewport={{ once: true }}
                             className={`group relative p-8 h-full bg-[#111] border border-white/10 transition-all duration-300 hover:z-20 hover:scale-105 hover:rotate-0 hover:shadow-[10px_10px_0px_0px_rgba(139,92,246,0.15)] ${i % 2 === 0 ? 'rotate-1' : '-rotate-1'} ${i % 3 === 0 ? 'rotate-2' : ''}`}
+                            onMouseEnter={() => {
+                                posthog.capture("track_viewed", {
+                                    track_id: track.id,
+                                    track_title: track.title,
+                                    track_technologies: track.tech,
+                                });
+                            }}
                         >
                             {/* "Tape" Effect */}
                             <div className={`absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-8 ${track.tape} backdrop-blur-sm -rotate-2 opacity-80 shadow-sm`}></div>

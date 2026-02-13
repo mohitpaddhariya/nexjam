@@ -3,6 +3,7 @@
 import Link from "next/link";
 import ASCIIBackground from "./ASCIIBackground";
 import { motion } from "motion/react";
+import posthog from "posthog-js";
 
 export default function Hero() {
 
@@ -163,6 +164,13 @@ export default function Hero() {
                             href="https://forms.gle/D21eZFngVmCzSnYb8"
                             target="_blank"
                             className="relative group inline-block focus:outline-none min-w-[280px]"
+                            onClick={() => {
+                                posthog.capture("apply_cta_clicked", {
+                                    location: "hero",
+                                    button_text: "APPLY NOW",
+                                    spots_remaining: 17,
+                                });
+                            }}
                         >
                             <motion.span
                                 whileHover={{ scale: 1.02, rotate: 1 }}
