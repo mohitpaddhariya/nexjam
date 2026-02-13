@@ -1,126 +1,143 @@
 const tracks = [
     {
         id: "01",
-        title: "Forensic Analysis of Synthetic Media",
-        description: "Design a system that assesses the authenticity or integrity of digital media, particularly when content may have been partially generated, edited, or manipulated.",
-        tech: ["Computer Vision", "Deepfakes", "Cryptography"],
-        status: "High Priority",
+        title: "Deepfake Detective",
+        description: "Is that video real? Prove it. Build a tool that flags synthetic media before it goes viral. We're looking for accuracy, not just vibes.",
+        tech: ["OpenCV", "Trust Issues", "48hrs"],
+        color: "bg-red-500/10 border-red-500/20",
+        tape: "bg-violet-500/30",
     },
     {
         id: "02",
-        title: "Passwordless Auth & Identity Systems",
-        description: "Design a passwordless authentication system that verifies user identity without shared secrets, while remaining secure across real-world usage scenarios.",
-        tech: ["FIDO2", "Biometrics", "Zero Knowledge"],
-        status: "Security Critical",
+        title: "Kill The Password",
+        description: "'123456' is not a password. Stop users from hacking themselves. Build auth that actually works without making people hate you.",
+        tech: ["Bio-hacking", "WebAuthn", "No-Login"],
+        color: "bg-green-500/10 border-green-500/20",
+        tape: "bg-fuchsia-500/30",
     },
     {
         id: "03",
-        title: "Secure Knowledge Access Systems",
-        description: "Design a system that answers user queries over restricted or sensitive information while enforcing access boundaries under ambiguous queries.",
-        tech: ["RAG", "RBAC", "Privacy Preserving AI"],
-        status: "Active Research",
+        title: "Secret Keeper",
+        description: "Build an AI that knows secrets but won't spill them. Even when we try to prompt-inject it into oblivion. Good luck.",
+        tech: ["Gaslighting", "RAG", "Security"],
+        color: "bg-blue-500/10 border-blue-500/20",
+        tape: "bg-indigo-500/30",
     },
     {
         id: "04",
-        title: "Machine Unlearning",
-        description: "Design a system that enables deployed models to selectively remove or reduce the influence of specific data or behaviors over time, without full retraining.",
-        tech: ["Model Editing", "Differential Privacy", "AI Safety"],
-        status: "Experimental",
+        title: "Eternal Sunshine",
+        description: "Make an AI model 'forget' specific data. It's way harder than it sounds. Unlearn the bad stuff without breaking the good stuff.",
+        tech: ["Amnesia", "Math", "Privacy"],
+        color: "bg-purple-500/10 border-purple-500/20",
+        tape: "bg-purple-500/30",
     },
     {
         id: "05",
-        title: "Network & System Anomaly Detection",
-        description: "Design a system that distinguishes expected versus problematic behavior in network or system activity, even as normal patterns evolve.",
-        tech: ["Network Security", "Unsupervised Learning", "TimeSeries"],
-        status: "Infrastructure",
+        title: "Ghost in the Shell",
+        description: "Find the hacker in the noise. Anomaly detection for systems that are already acting weird. Spot the difference between 'bug' and 'breach'.",
+        tech: ["Mr. Robot", "Wireshark", "Pattern Matching"],
+        color: "bg-orange-500/10 border-orange-500/20",
+        tape: "bg-white/10",
     },
     {
         id: "06",
-        title: "Developer Pipeline Intelligence",
-        description: "Design a system that improves visibility into software build, test, or deployment pipelines by surfacing failures, inefficiencies, or unexpected behavior.",
-        tech: ["CI/CD", "DevOps", "Log Analysis"],
-        status: "Optimization",
+        title: "It Works on My Machine",
+        description: "Fix the dev pipeline hellscape. If it breaks in prod, it counts. Build tools that stop us from crying during deployment.",
+        tech: ["Docker", "Tears", "Bash"],
+        color: "bg-zinc-800/50 border-white/10",
+        tape: "bg-rose-500/30",
     },
 ];
 
 export default function Tracks() {
     return (
-        <section id="tracks" className="py-32 px-6 relative overflow-hidden bg-black selection:bg-violet-500/30">
-            {/* Ambient Background Glow */}
-            <div className="absolute top-[20%] right-[-10%] w-[500px] h-[500px] bg-violet-900/10 rounded-full blur-[120px] pointer-events-none"></div>
-            <div className="absolute bottom-[20%] left-[-10%] w-[500px] h-[500px] bg-blue-900/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <section id="tracks" className="py-32 px-6 relative overflow-hidden bg-[#050505] selection:bg-violet-500/30 selection:text-white">
+            {/* Background Scribbles/Noise */}
+            <div className="absolute inset-0 opacity-20 pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] brightness-50 contrast-150"></div>
 
             <div className="max-w-7xl mx-auto relative z-10">
-                {/* Section Header */}
-                <div className="mb-20 space-y-4">
-                    <div className="flex items-center gap-3">
-                        <div className="h-px w-10 bg-violet-500/50"></div>
-                        <span className="font-mono text-violet-400 text-sm tracking-[0.2em] uppercase">
-                            System Modules
-                        </span>
-                    </div>
-                    <h2 className="font-serif text-5xl sm:text-7xl text-white tracking-tight">
-                        Research Tracks
+                {/* Section Header - Scrappy Style */}
+                <div className="mb-24 relative">
+                    <div className="absolute -top-10 -left-10 w-32 h-32 bg-violet-500/10 rounded-full blur-3xl"></div>
+
+                    <span className="font-mono text-violet-400 text-sm tracking-widest uppercase mb-4 block rotate-[-2deg] inline-block bg-white/5 px-2 border border-violet-500/30 backdrop-blur-sm">
+                        // THE_CHALLENGES
+                    </span>
+
+                    <h2 className="font-serif text-6xl sm:text-8xl text-white tracking-widest uppercase mb-6 mix-blend-exclusion">
+                        Pick Your <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-violet-300 to-fuchsia-400">Poison</span>
                     </h2>
-                    <p className="text-muted-foreground/80 max-w-2xl text-lg font-light leading-relaxed border-l-2 border-white/10 pl-6">
-                        Teams will be presented with new constraints and restrictions that reflect real-world pressures. <span className="text-white">Adaptability is key.</span>
+
+                    <p className="text-zinc-400 max-w-xl text-xl font-mono leading-relaxed ml-2 border-l border-violet-500/40 pl-6">
+                        Real problems. No syllabus. <br />
+                        <span className="text-white">Figure it out or break trying.</span>
                     </p>
+
+                    {/* Sticker Decor */}
+                    <div className="absolute right-0 top-0 hidden md:block rotate-12 opacity-80">
+                        <div className="bg-white/5 text-violet-200 font-bold p-4 text-center shadow-xl transform rotate-3 border border-violet-500/20 backdrop-blur-md">
+                            <div className="text-[10px] uppercase tracking-widest border-b border-violet-500/20 pb-1 mb-1">Notice</div>
+                            <div className="text-xl font-serif">RTFM FIRST</div>
+                        </div>
+                    </div>
                 </div>
 
-                {/* Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {tracks.map((track) => (
+                {/* Grid - Scrappy Layout */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 gap-y-16">
+                    {tracks.map((track, i) => (
                         <div
                             key={track.id}
-                            className="group relative p-8 h-full bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden hover:border-violet-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_-10px_rgba(139,92,246,0.15)] flex flex-col"
+                            className={`group relative p-8 h-full bg-[#111] border border-white/10 transition-all duration-300 hover:z-20 hover:scale-105 hover:rotate-0 hover:shadow-[10px_10px_0px_0px_rgba(139,92,246,0.15)] ${i % 2 === 0 ? 'rotate-1' : '-rotate-1'} ${i % 3 === 0 ? 'rotate-2' : ''}`}
                         >
-                            {/* Giant Background Number */}
-                            <span className="absolute -right-4 -top-8 font-serif text-[12rem] text-white/[0.02] group-hover:text-violet-500/[0.05] transition-colors duration-500 pointer-events-none select-none">
+                            {/* "Tape" Effect */}
+                            <div className={`absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-8 ${track.tape} backdrop-blur-sm -rotate-2 opacity-80 shadow-sm`}></div>
+
+                            {/* Massive Index */}
+                            <div className="absolute -right-4 -bottom-10 font-serif text-[8rem] text-white/[0.03] pointer-events-none select-none group-hover:text-violet-500/[0.05] transition-colors">
                                 {track.id}
-                            </span>
+                            </div>
 
-                            {/* Card Header: Status & ID */}
-                            <div className="flex justify-between items-start mb-6 relative z-10">
-                                <div className="flex items-center gap-2">
-                                    <span className="relative flex h-2 w-2">
-                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75"></span>
-                                        <span className="relative inline-flex rounded-full h-2 w-2 bg-violet-500"></span>
-                                    </span>
-                                    <span className="font-mono text-[10px] text-violet-300 uppercase tracking-wider">
-                                        {track.status}
-                                    </span>
+                            {/* Card Content */}
+                            <div className="relative z-10 flex flex-col h-full">
+                                <h3 className="font-serif text-3xl text-white mb-4 leading-none group-hover:text-violet-400 transition-colors">
+                                    {track.title}
+                                </h3>
+
+                                <p className="text-sm font-mono text-zinc-400 leading-relaxed mb-8 flex-grow">
+                                    {track.description}
+                                </p>
+
+                                {/* Tags - Cultural/Messy */}
+                                <div className="flex flex-wrap gap-2 mt-auto">
+                                    {track.tech.map((t) => (
+                                        <span key={t} className="text-[10px] uppercase font-bold tracking-wider px-2 py-1 bg-white text-black transform hover:-rotate-2 transition-transform cursor-default group-hover:bg-violet-200">
+                                            #{t}
+                                        </span>
+                                    ))}
                                 </div>
-                                <span className="font-mono text-xs text-white/20 group-hover:text-white/40 transition-colors">
-                                    MSG_ID_{track.id}
-                                </span>
                             </div>
-
-                            {/* Title */}
-                            <h3 className="font-serif text-2xl text-white mb-4 leading-tight group-hover:text-violet-100 transition-colors relative z-10">
-                                {track.title}
-                            </h3>
-
-                            {/* Description */}
-                            <p className="text-sm text-muted-foreground leading-relaxed mb-8 flex-grow relative z-10 opacity-80 group-hover:opacity-100 transition-opacity">
-                                {track.description}
-                            </p>
-
-                            {/* Tech Tags */}
-                            <div className="flex flex-wrap gap-2 mt-auto relative z-10">
-                                {track.tech.map((t) => (
-                                    <span key={t} className="text-[10px] uppercase tracking-wider font-mono px-2 py-1 rounded-md bg-black/20 border border-white/10 text-white/50 group-hover:border-violet-500/30 group-hover:text-violet-200 transition-colors">
-                                        {t}
-                                    </span>
-                                ))}
-                            </div>
-
-                            {/* Hover Gradient Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-
-                            {/* Bottom aesthetic line */}
-                            <div className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-violet-500/50 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 opacity-0 group-hover:opacity-100"></div>
                         </div>
                     ))}
+
+                    {/* "Polaroid" Slot for Real Photo/Vibe */}
+                    <div className="group relative p-4 bg-white rotate-3 hover:rotate-0 transition-transform duration-300 shadow-xl h-full flex flex-col min-h-[300px]">
+                        <div className="bg-zinc-900 w-full h-48 flex items-center justify-center overflow-hidden relative grayscale group-hover:grayscale-0 transition-all duration-500">
+                            {/* Placeholder for real photo - keeping it CSS only for now */}
+                            <div className="text-zinc-700 font-mono text-xs text-center p-4">
+                                [ INSERT CHAOTIC LAB PHOTO HERE ]
+                                <br />
+                                <span className="opacity-50">.jpg</span>
+                            </div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        </div>
+                        <div className="pt-4 px-2 font-handwriting text-black text-center font-bold font-serif italic text-lg">
+                            "Last year's survivors"
+                        </div>
+                        <div className="absolute -top-4 -right-4 w-12 h-12 bg-violet-500 rounded-full flex items-center justify-center text-white font-bold text-xs rotate-12 shadow-md">
+                            2024
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>

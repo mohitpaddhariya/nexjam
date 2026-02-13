@@ -58,12 +58,14 @@ export default function ASCIIBackground() {
                 const distance = Math.sqrt(dx * dx + dy * dy);
 
                 // Highlight if near mouse
+                // Highlight if near mouse
                 if (distance < 200) {
                     ctx.fillStyle = "#ffffff"; // Bright white highlight
-                    ctx.shadowColor = "#8b5cf6"; // Violet glow
-                    ctx.shadowBlur = 15;
+                    ctx.shadowColor = "transparent"; // Ensure NO GLOW
+                    ctx.shadowBlur = 0;
                 } else {
-                    ctx.fillStyle = "#333333"; // Dimmer grey (less distracting)
+                    ctx.fillStyle = "#333333"; // Dimmer grey
+                    ctx.shadowColor = "transparent";
                     ctx.shadowBlur = 0;
                 }
 
