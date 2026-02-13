@@ -1,5 +1,7 @@
 # ⚡ NexJam — Research-Driven Hackathon
 
+🌐 **Live:** [nexjam.vercel.app](https://nexjam.vercel.app)
+
 > **10 Hours. 4 Friends. Infinite Fun.**
 > Build something that doesn't crash — or crash it *spectacularly*.
 

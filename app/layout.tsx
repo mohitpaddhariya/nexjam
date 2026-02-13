@@ -18,7 +18,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nexjam.dev"),
+  metadataBase: new URL("https://nexjam.vercel.app"),
   title: {
     default: "NexJam | Research-Driven Hackathon — 10 Hours, Infinite Fun",
     template: "%s | NexJam",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://nexjam.dev",
+    url: "https://nexjam.vercel.app",
     siteName: "NexJam",
     title: "NexJam | Research-Driven Hackathon — 10 Hours, Infinite Fun",
     description:
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     apple: "/apple-icon.png",
   },
   alternates: {
-    canonical: "https://nexjam.dev",
+    canonical: "https://nexjam.vercel.app",
   },
 };
 
@@ -106,8 +106,8 @@ const jsonLd = {
     availability: "https://schema.org/LimitedAvailability",
     url: "https://forms.gle/D21eZFngVmCzSnYb8",
   },
-  image: "https://nexjam.dev/og-image.png",
-  url: "https://nexjam.dev",
+  image: "https://nexjam.vercel.app/og-image.png",
+  url: "https://nexjam.vercel.app",
 };
 
 export default function RootLayout({

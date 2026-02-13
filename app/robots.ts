@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
                 allow: "/",
             },
         ],
-        sitemap: "https://nexjam.dev/sitemap.xml",
+        sitemap: "https://nexjam.vercel.app/sitemap.xml",
     };
 }
