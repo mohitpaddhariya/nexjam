@@ -51,7 +51,7 @@ const team = [
     {
         name: "YUTI NAHA",
         role: "CYBERSECURITY HEAD",
-        image: "yuti.jpg",
+        image: "yuti.jpeg",
         tape: "bg-rose-500/30",
         rotation: "rotate-1"
     }
