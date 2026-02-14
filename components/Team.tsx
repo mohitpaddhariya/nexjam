@@ -6,9 +6,9 @@ import posthog from "posthog-js";
 
 const team = [
     {
-        name: "AAHANA",
+        name: "AHANA SHARAN",
         role: "CLUB HEAD",
-        image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Aahana",
+        image: "ahana.jpg",
         tape: "bg-rose-500/30",
         rotation: "-rotate-1"
     },
