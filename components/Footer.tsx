@@ -6,7 +6,7 @@ import posthog from "posthog-js";
 
 export default function Footer() {
     return (
-        <footer aria-label="Site footer" className="relative border-t border-white/10 bg-black pt-20 pb-10 overflow-hidden">
+        <footer aria-label="Site footer" className="relative border-t border-white/10 bg-black pt-12 sm:pt-16 md:pt-20 pb-8 sm:pb-10 overflow-hidden">
 
             {/* Massive Background Text */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center pointer-events-none opacity-[0.03] select-none" aria-hidden="true">
@@ -15,7 +15,7 @@ export default function Footer() {
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col md:flex-row justify-between items-end gap-12">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 flex flex-col md:flex-row justify-between items-center md:items-end gap-8 sm:gap-12">
 
                 {/* Left Side: Brand & Vibe */}
                 <motion.div
@@ -23,10 +23,10 @@ export default function Footer() {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
-                    className="space-y-6"
+                    className="space-y-4 sm:space-y-6 text-center md:text-left"
                 >
                     <div className="relative inline-block">
-                        <span className="font-serif text-4xl text-white font-bold tracking-tight">NEXJAM</span>
+                        <span className="font-serif text-3xl sm:text-4xl text-white font-bold tracking-tight">NEXJAM</span>
                         <motion.div
                             animate={{ rotate: [12, 0, 12] }}
                             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
@@ -42,7 +42,7 @@ export default function Footer() {
                         <span className="text-violet-400">Department of Computer Science.</span>
                     </p>
 
-                    <div className="flex gap-4">
+                    <div className="flex gap-4 justify-center md:justify-start">
                         {['Instagram', 'Twitter', 'GitHub'].map((social) => (
                             <Link
                                 key={social}
@@ -72,7 +72,7 @@ export default function Footer() {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="flex flex-col items-start md:items-end gap-4"
+                    className="flex flex-col items-center md:items-end gap-4"
                 >
 
                     {/* Rotated "Made With" Badge - NOW USER CREDITS */}

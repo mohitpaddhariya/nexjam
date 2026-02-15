@@ -8,7 +8,7 @@ import posthog from "posthog-js";
 export default function Hero() {
 
     return (
-        <section aria-label="Hero — NexJam Research-Driven Hackathon" className="relative h-screen flex flex-col justify-center px-6 sm:px-12 overflow-hidden border-b border-white/10 bg-[#050505] selection:bg-violet-500/30 selection:text-white">
+        <section aria-label="Hero — NexJam Research-Driven Hackathon" className="relative min-h-screen flex flex-col justify-center px-4 sm:px-6 md:px-12 overflow-hidden border-b border-white/10 bg-[#050505] selection:bg-violet-500/30 selection:text-white">
             {/* Background Effects */}
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-150 contrast-150 pointer-events-none z-10"></div>
             <ASCIIBackground />
@@ -31,7 +31,7 @@ export default function Hero() {
                 npm install insomnia
             </motion.div>
 
-            <div className="relative z-20 w-full max-w-7xl mx-auto flex flex-col justify-between h-[calc(100vh-6rem)] pt-20">
+            <div className="relative z-20 w-full max-w-7xl mx-auto flex flex-col justify-between min-h-[calc(100vh-6rem)] h-auto pt-24 sm:pt-20">
 
                 {/* CENTER STACK: Title > Tagline > Desc */}
                 <div className="flex flex-col items-center text-center justify-center flex-grow">
@@ -107,11 +107,11 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.8 }}
-                    className="grid lg:grid-cols-2 gap-8 items-end pb-6"
+                    className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-end pb-6"
                 >
 
                     {/* Bottom Left: Code & Hashtags */}
-                    <div className="flex flex-col gap-3 items-start">
+                    <div className="flex flex-col gap-3 items-center sm:items-start">
                         <div className="font-mono text-sm text-violet-400/80 bg-black/50 px-4 py-2 border border-violet-500/30 rounded backdrop-blur-sm">
                             while(alive) &#123; code(); &#125;
                         </div>
@@ -126,14 +126,14 @@ export default function Hero() {
                     </div>
 
                     {/* Bottom Right: Action & Urgency */}
-                    <div className="flex flex-col items-center lg:items-end gap-4 relative">
+                    <div className="flex flex-col items-center lg:items-end gap-3 sm:gap-4 relative">
 
                         {/* Sticker Pointing at Button */}
                         <motion.div
                             initial={{ opacity: 0, scale: 0, rotate: 0 }}
                             animate={{ opacity: 1, scale: 1, rotate: 15 }}
                             transition={{ type: "spring", stiffness: 200, delay: 1.2 }}
-                            className="absolute top-10 -left-10 lg:left-auto lg:right-[300px] z-20 pointer-events-none hidden md:block"
+                            className="absolute top-10 -left-10 lg:left-auto lg:right-[300px] z-20 pointer-events-none hidden lg:block"
                         >
                             <div className="bg-yellow-400 text-black font-mono font-bold px-3 py-1.5 text-xs shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] border-2 border-black">
                                 CLICK IT →
@@ -163,7 +163,7 @@ export default function Hero() {
                         <Link
                             href="https://forms.gle/D21eZFngVmCzSnYb8"
                             target="_blank"
-                            className="relative group inline-block focus:outline-none min-w-[280px]"
+                            className="relative group inline-block focus:outline-none w-full sm:w-auto sm:min-w-[280px]"
                             onClick={() => {
                                 posthog.capture("apply_cta_clicked", {
                                     location: "hero",
@@ -175,7 +175,7 @@ export default function Hero() {
                             <motion.span
                                 whileHover={{ scale: 1.02, rotate: 1 }}
                                 whileTap={{ scale: 0.98, rotate: -1 }}
-                                className="relative z-10 block w-full px-8 py-5 overflow-hidden leading-tight font-black text-2xl italic uppercase text-center text-white bg-violet-600 border-2 border-white/20 transform -rotate-1 shadow-[6px_6px_0px_rgba(0,0,0,1)]"
+                                className="relative z-10 block w-full px-6 py-4 sm:px-8 sm:py-5 overflow-hidden leading-tight font-black text-xl sm:text-2xl italic uppercase text-center text-white bg-violet-600 border-2 border-white/20 transform -rotate-1 shadow-[6px_6px_0px_rgba(0,0,0,1)]"
                             >
                                 APPLY NOW →
                             </motion.span>

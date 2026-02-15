@@ -59,7 +59,7 @@ const team = [
 
 export default function Team() {
     return (
-        <section id="team" className="py-32 px-6 relative overflow-hidden bg-[#0a0a0a] border-t border-white/10">
+        <section id="team" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 relative overflow-hidden bg-[#0a0a0a] border-t border-white/10">
             {/* Background Scribbles */}
             <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] brightness-100 contrast-150"></div>
 
@@ -70,18 +70,18 @@ export default function Team() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
-                    className="mb-20 text-center"
+                    className="mb-12 sm:mb-16 md:mb-20 text-center"
                 >
                     <span className="font-mono text-violet-400 text-sm tracking-widest uppercase mb-4 block">
                         // THE_CREW
                     </span>
-                    <h2 className="font-serif text-5xl sm:text-7xl text-white tracking-widest uppercase mix-blend-exclusion">
+                    <h2 className="font-serif text-4xl sm:text-5xl md:text-7xl text-white tracking-widest uppercase mix-blend-exclusion">
                         ACCOMPLICES
                     </h2>
                 </motion.div>
 
                 {/* Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-12">
                     {team.map((member, i) => (
                         <motion.div
                             key={i}

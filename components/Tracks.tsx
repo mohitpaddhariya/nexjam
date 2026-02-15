@@ -57,7 +57,7 @@ const tracks = [
 
 export default function Tracks() {
     return (
-        <section id="tracks" className="py-32 px-6 relative overflow-hidden bg-[#050505] selection:bg-violet-500/30 selection:text-white">
+        <section id="tracks" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 relative overflow-hidden bg-[#050505] selection:bg-violet-500/30 selection:text-white">
             {/* Background Scribbles/Noise */}
             <div className="absolute inset-0 opacity-20 pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] brightness-50 contrast-150"></div>
 
@@ -68,7 +68,7 @@ export default function Tracks() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
-                    className="mb-24 relative"
+                    className="mb-12 sm:mb-16 md:mb-24 relative"
                 >
                     <div className="absolute -top-10 -left-10 w-32 h-32 bg-violet-500/10 rounded-full blur-3xl"></div>
 
@@ -76,11 +76,11 @@ export default function Tracks() {
                         // THE_CHALLENGES
                     </span>
 
-                    <h2 className="font-serif text-6xl sm:text-8xl text-white tracking-widest uppercase mb-6 mix-blend-exclusion">
+                    <h2 className="font-serif text-4xl sm:text-6xl md:text-8xl text-white tracking-widest uppercase mb-4 sm:mb-6 mix-blend-exclusion">
                         Pick Your <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-violet-300 to-fuchsia-400">Poison</span>
                     </h2>
 
-                    <p className="text-zinc-400 max-w-xl text-xl font-mono leading-relaxed ml-2 border-l border-violet-500/40 pl-6">
+                    <p className="text-zinc-400 max-w-xl text-base sm:text-xl font-mono leading-relaxed ml-2 border-l border-violet-500/40 pl-4 sm:pl-6">
                         Real problems. No syllabus. <br />
                         <span className="text-white">Figure it out or break trying.</span>
                     </p>
@@ -101,7 +101,7 @@ export default function Tracks() {
                 </motion.div>
 
                 {/* Grid - Scrappy Layout */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 gap-y-16">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-12 gap-y-10 sm:gap-y-12 md:gap-y-16">
                     {tracks.map((track, i) => (
                         <motion.div
                             key={track.id}
@@ -109,7 +109,7 @@ export default function Tracks() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: i * 0.1 }}
                             viewport={{ once: true }}
-                            className={`group relative p-8 h-full bg-[#111] border border-white/10 transition-all duration-300 hover:z-20 hover:scale-105 hover:rotate-0 hover:shadow-[10px_10px_0px_0px_rgba(139,92,246,0.15)] ${i % 2 === 0 ? 'rotate-1' : '-rotate-1'} ${i % 3 === 0 ? 'rotate-2' : ''}`}
+                            className={`group relative p-6 sm:p-8 h-full bg-[#111] border border-white/10 transition-all duration-300 hover:z-20 hover:scale-105 hover:rotate-0 hover:shadow-[10px_10px_0px_0px_rgba(139,92,246,0.15)] sm:${i % 2 === 0 ? 'rotate-1' : '-rotate-1'} sm:${i % 3 === 0 ? 'rotate-2' : ''}`}
                             onMouseEnter={() => {
                                 posthog.capture("track_viewed", {
                                     track_id: track.id,
@@ -128,7 +128,7 @@ export default function Tracks() {
 
                             {/* Card Content */}
                             <div className="relative z-10 flex flex-col h-full">
-                                <h3 className="font-serif text-2xl sm:text-3xl text-white mb-4 leading-tight group-hover:text-violet-400 transition-colors">
+                                <h3 className="font-serif text-xl sm:text-2xl md:text-3xl text-white mb-3 sm:mb-4 leading-tight group-hover:text-violet-400 transition-colors">
                                     {track.title}
                                 </h3>
 
@@ -154,7 +154,7 @@ export default function Tracks() {
                         whileInView={{ opacity: 1, scale: 1, rotate: 3 }}
                         transition={{ duration: 0.6, delay: 0.6 }}
                         viewport={{ once: true }}
-                        className="group relative p-4 bg-white shadow-xl h-full flex flex-col min-h-[300px] hover:rotate-0 transition-transform duration-300 transform rotate-3"
+                        className="group relative p-4 bg-white shadow-xl h-full flex flex-col min-h-[250px] sm:min-h-[300px] hover:rotate-0 transition-transform duration-300 transform sm:rotate-3"
                     >
                         <div className="bg-zinc-900 w-full h-48 flex items-center justify-center overflow-hidden relative grayscale group-hover:grayscale-0 transition-all duration-500">
                             {/* Placeholder for real photo - keeping it CSS only for now */}
