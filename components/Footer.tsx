@@ -43,14 +43,14 @@ export default function Footer() {
                     </p>
 
                     <div className="flex gap-4 justify-center md:justify-start">
-                        {['Instagram', 'Twitter', 'GitHub'].map((social) => (
+                        {[{name: 'Instagram', url: 'https://www.instagram.com/nexus.pesu'}, {name: 'GitHub', url: 'https://github.com/Nexus-PES'}].map((social) => (
                             <Link
-                                key={social}
-                                href="#"
+                                key={social.name}
+                                href={social.url}
                                 className="relative block group"
                                 onClick={() => {
                                     posthog.capture("social_link_clicked", {
-                                        platform: social.toLowerCase(),
+                                        platform: social.name.toLowerCase(),
                                         location: "footer",
                                     });
                                 }}
@@ -59,7 +59,7 @@ export default function Footer() {
                                     whileHover={{ scale: 1.1, color: "#fff" }}
                                     className="block text-zinc-400 uppercase text-xs tracking-widest border-b border-transparent group-hover:border-violet-500 transition-colors font-mono"
                                 >
-                                    {social}
+                                    {social.name}
                                 </motion.span>
                             </Link>
                         ))}
