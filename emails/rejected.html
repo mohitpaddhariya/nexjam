@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>NexJam 2026 — Application Update</title>
+    <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
+    <style>
+        /* Reset */
+        body,
+        table,
+        td,
+        a {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        table,
+        td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+        img {
+            -ms-interpolation-mode: bicubic;
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* Dark theme base */
+        body {
+            background-color: #0a0a0a;
+            font-family: 'Courier New', Courier, monospace;
+            color: #e4e4e7;
+        }
+
+        .email-wrapper {
+            background-color: #0a0a0a;
+            padding: 0;
+        }
+
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #111111;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Header with logos */
+        .header-bar {
+            background-color: #050505;
+            padding: 24px 32px;
+            border-bottom: 2px solid #52525b;
+        }
+
+        .header-table {
+            width: 100%;
+        }
+
+        .logo-img {
+            height: 48px;
+            width: auto;
+        }
+
+        /* Muted stripe (no violet — intentionally subdued) */
+        .tape-stripe {
+            height: 4px;
+            background: linear-gradient(90deg, #3f3f46, #52525b, #71717a, #52525b, #3f3f46);
+        }
+
+        /* Body content */
+        .content-area {
+            padding: 40px 32px;
+        }
+
+        .greeting {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0 0 8px 0;
+            letter-spacing: -0.5px;
+        }
+
+        .team-name {
+            color: #a855f7;
+            font-style: italic;
+        }
+
+        .subject-line {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: #d4d4d8;
+            margin: 20px 0 0 0;
+        }
+
+        .body-text {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            line-height: 1.7;
+            color: #a1a1aa;
+            margin: 24px 0;
+        }
+
+        .body-text strong {
+            color: #e4e4e7;
+        }
+
+        /* Respect message card */
+        .respect-card {
+            background-color: #1a1a1a;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-left: 4px solid #52525b;
+            padding: 20px 24px;
+            margin: 28px 0;
+        }
+
+        .respect-card-title {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #71717a;
+            margin: 0 0 10px 0;
+        }
+
+        .respect-text {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 13px;
+            color: #a1a1aa;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Encouragement section */
+        .encourage-title {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #a855f7;
+            margin: 32px 0 16px 0;
+        }
+
+        .encourage-item {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 13px;
+            color: #a1a1aa;
+            padding: 6px 0;
+            line-height: 1.5;
+        }
+
+        .encourage-bullet {
+            color: #7c3aed;
+            font-weight: 700;
+            margin-right: 6px;
+        }
+
+        /* Follow us button (softer CTA) */
+        .cta-wrapper {
+            text-align: center;
+            padding: 28px 0 12px 0;
+        }
+
+        .cta-button-soft {
+            display: inline-block;
+            background-color: transparent;
+            color: #a855f7 !important;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            padding: 12px 36px;
+            border: 2px solid #7c3aed;
+        }
+
+        .cta-button-soft:hover {
+            background-color: rgba(124, 58, 237, 0.1);
+        }
+
+        /* Divider */
+        .divider {
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            margin: 32px 0;
+        }
+
+        /* Quote */
+        .closing-quote {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 16px;
+            font-style: italic;
+            color: #71717a;
+            text-align: center;
+            margin: 28px 0;
+            padding: 0 16px;
+            line-height: 1.5;
+        }
+
+        .closing-quote span {
+            color: #a855f7;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #050505;
+            padding: 28px 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-brand {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0 0 6px 0;
+        }
+
+        .footer-tagline {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 11px;
+            color: #71717a;
+            margin: 0 0 16px 0;
+        }
+
+        .footer-links {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 11px;
+            color: #52525b;
+            margin: 0;
+        }
+
+        .footer-links a {
+            color: #a855f7;
+            text-decoration: none;
+        }
+
+        .footer-copy {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 10px;
+            color: #3f3f46;
+            margin: 16px 0 0 0;
+        }
+
+        /* Mobile responsive */
+        @media only screen and (max-width: 600px) {
+            .email-container {
+                width: 100% !important;
+            }
+
+            .content-area {
+                padding: 28px 20px !important;
+            }
+
+            .header-bar {
+                padding: 16px 20px !important;
+            }
+
+            .greeting {
+                font-size: 22px !important;
+            }
+
+            .subject-line {
+                font-size: 18px !important;
+            }
+
+            .footer {
+                padding: 20px !important;
+            }
+
+            .logo-img {
+                height: 36px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="email-wrapper">
+        <tr>
+            <td align="center" style="padding: 24px 16px;">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600"
+                    class="email-container">
+
+                    <!-- ======== HEADER: LOGOS ======== -->
+                    <tr>
+                        <td class="header-bar">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="header-table">
+                                <tr>
+                                    <td align="left" width="50%">
+                                        <img src="../public/nexus.png" alt="Nexus Club" class="logo-img"
+                                            style="height:68px;">
+                                    </td>
+                                    <td align="right" width="50%">
+                                        <img src="../public/pes.png" alt="PES University" class="logo-img"
+                                            style="height:68px;">
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- ======== MUTED STRIPE ======== -->
+                    <tr>
+                        <td class="tape-stripe"></td>
+                    </tr>
+
+                    <!-- ======== BODY CONTENT ======== -->
+                    <tr>
+                        <td class="content-area">
+
+                            <!-- Greeting -->
+                            <h1 class="greeting">
+                                Hey <span class="team-name">{{team_name}}</span>,
+                            </h1>
+
+                            <p class="subject-line">Thanks for applying to NexJam.</p>
+
+                            <p class="body-text">
+                                First off — we genuinely appreciate you taking the time to apply. We received an
+                                overwhelming number of applications this year, and it was incredibly tough to narrow
+                                down.
+                            </p>
+
+                            <p class="body-text">
+                                After careful review, we're sorry to say that <strong>your team was not
+                                    selected</strong> for NexJam 2026 this time around. This doesn't reflect your skills
+                                or potential — just the reality of limited spots and a very competitive applicant pool.
+                            </p>
+
+                            <!-- Respect Card -->
+                            <div class="respect-card">
+                                <p class="respect-card-title">// The Numbers</p>
+                                <p class="respect-text">
+                                    We received <strong style="color:#e4e4e7;">100+</strong> applications for only
+                                    <strong style="color:#e4e4e7;">35</strong> spots. The selection was based on
+                                    application quality, track alignment, and team composition. It was a really hard
+                                    call.
+                                </p>
+                            </div>
+
+                            <!-- Encouragement -->
+                            <p class="encourage-title">// This Isn't The End</p>
+
+                            <div class="encourage-item">
+                                <span class="encourage-bullet">→</span>
+                                Keep building. The best hackers don't wait for hackathons — they ship anyway.
+                            </div>
+                            <div class="encourage-item">
+                                <span class="encourage-bullet">→</span>
+                                Follow us for future events, workshops, and open community projects.
+                            </div>
+                            <div class="encourage-item">
+                                <span class="encourage-bullet">→</span>
+                                We'd love to see your team apply again for NexJam V2 — we're already planning it.
+                            </div>
+
+                            <!-- Soft CTA -->
+                            <div class="cta-wrapper">
+                                <a href="https://nexjam.vercel.app" target="_blank" class="cta-button-soft">
+                                    Visit NexJam →
+                                </a>
+                            </div>
+
+                            <hr class="divider">
+
+                            <!-- Closing quote -->
+                            <p class="closing-quote">
+                                "The only way to do great work is to <span>never stop starting</span>."
+                            </p>
+
+                            <p class="body-text" style="font-size:12px; text-align:center;">
+                                Stay connected with us on
+                                <a href="https://instagram.com/nexus_club"
+                                    style="color:#a855f7;text-decoration:none;">Instagram</a>
+                                &amp;
+                                <a href="https://github.com/Nexus-PESU"
+                                    style="color:#a855f7;text-decoration:none;">GitHub</a>.
+                                <br>We're rooting for you. 💜
+                            </p>
+
+                        </td>
+                    </tr>
+
+                    <!-- ======== FOOTER ======== -->
+                    <tr>
+                        <td class="footer">
+                            <p class="footer-brand">NEXJAM</p>
+                            <p class="footer-tagline">10 Hours. 4 Friends. Infinite Fun.</p>
+                            <p class="footer-links">
+                                <a href="https://nexjam.vercel.app">Website</a> &nbsp;·&nbsp;
+                                <a href="https://instagram.com/nexus_club">Instagram</a> &nbsp;·&nbsp;
+                                <a href="https://github.com/Nexus-PESU">GitHub</a>
+                            </p>
+                            <p class="footer-copy">
+                                © 2026 Nexus Club — Department of Computer Science, PES University.
+                                <br>You're receiving this because you applied to NexJam 2026.
+                            </p>
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

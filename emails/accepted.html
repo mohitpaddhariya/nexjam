@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>You're In! — NexJam 2026</title>
+    <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
+    <style>
+        /* Reset */
+        body,
+        table,
+        td,
+        a {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        table,
+        td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+        img {
+            -ms-interpolation-mode: bicubic;
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* Dark theme base */
+        body {
+            background-color: #0a0a0a;
+            font-family: 'Courier New', Courier, monospace;
+            color: #e4e4e7;
+        }
+
+        .email-wrapper {
+            background-color: #0a0a0a;
+            padding: 0;
+        }
+
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #111111;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Header with logos */
+        .header-bar {
+            background-color: #050505;
+            padding: 24px 32px;
+            border-bottom: 2px solid #7c3aed;
+        }
+
+        .header-table {
+            width: 100%;
+        }
+
+        .logo-img {
+            height: 48px;
+            width: auto;
+        }
+
+        /* Accent tape stripe */
+        .tape-stripe {
+            height: 6px;
+            background: linear-gradient(90deg, #7c3aed, #a855f7, #d946ef, #a855f7, #7c3aed);
+        }
+
+        /* Status badge */
+        .status-badge {
+            display: inline-block;
+            background-color: #22c55e;
+            color: #000000;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 900;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border: 2px solid #000;
+            box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Body content */
+        .content-area {
+            padding: 40px 32px;
+        }
+
+        .greeting {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0 0 8px 0;
+            letter-spacing: -0.5px;
+        }
+
+        .team-name {
+            color: #a855f7;
+            font-style: italic;
+        }
+
+        .congrats-text {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 36px;
+            font-weight: 900;
+            color: #FFD700;
+            margin: 24px 0 0 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+        }
+
+        .body-text {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            line-height: 1.7;
+            color: #a1a1aa;
+            margin: 24px 0;
+        }
+
+        .body-text strong {
+            color: #e4e4e7;
+        }
+
+        /* Info card (hackathon details) */
+        .info-card {
+            background-color: #1a1a1a;
+            border: 1px solid rgba(124, 58, 237, 0.3);
+            border-left: 4px solid #7c3aed;
+            padding: 20px 24px;
+            margin: 24px 0;
+        }
+
+        .info-card-title {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #7c3aed;
+            margin: 0 0 12px 0;
+        }
+
+        .info-row {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 13px;
+            color: #d4d4d8;
+            padding: 4px 0;
+        }
+
+        .info-label {
+            color: #71717a;
+        }
+
+        .info-value {
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        /* CTA Button */
+        .cta-wrapper {
+            text-align: center;
+            padding: 32px 0 16px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #7c3aed;
+            color: #ffffff !important;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 900;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            padding: 16px 48px;
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.6);
+            transform: rotate(-1deg);
+        }
+
+        .cta-button:hover {
+            background-color: #6d28d9;
+        }
+
+        .cta-subtext {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 11px;
+            color: #71717a;
+            text-align: center;
+            margin: 12px 0 0 0;
+        }
+
+        /* Steps section */
+        .steps-title {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #FFD700;
+            margin: 32px 0 16px 0;
+        }
+
+        .step-row {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 13px;
+            color: #a1a1aa;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .step-number {
+            display: inline-block;
+            background-color: #7c3aed;
+            color: #fff;
+            font-weight: 900;
+            font-size: 11px;
+            width: 22px;
+            height: 22px;
+            line-height: 22px;
+            text-align: center;
+            margin-right: 10px;
+        }
+
+        /* Urgency bar */
+        .urgency-bar {
+            background-color: #1a1a1a;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            padding: 16px 20px;
+            margin: 28px 0;
+            text-align: center;
+        }
+
+        .urgency-text {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12px;
+            font-weight: 700;
+            color: #ef4444;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .urgency-detail {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 11px;
+            color: #71717a;
+            margin: 6px 0 0 0;
+        }
+
+        /* Divider */
+        .divider {
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            margin: 32px 0;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #050505;
+            padding: 28px 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-brand {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0 0 6px 0;
+        }
+
+        .footer-tagline {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 11px;
+            color: #71717a;
+            margin: 0 0 16px 0;
+        }
+
+        .footer-links {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 11px;
+            color: #52525b;
+            margin: 0;
+        }
+
+        .footer-links a {
+            color: #a855f7;
+            text-decoration: none;
+        }
+
+        .footer-copy {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 10px;
+            color: #3f3f46;
+            margin: 16px 0 0 0;
+        }
+
+        /* Mobile responsive */
+        @media only screen and (max-width: 600px) {
+            .email-container {
+                width: 100% !important;
+            }
+
+            .content-area {
+                padding: 28px 20px !important;
+            }
+
+            .header-bar {
+                padding: 16px 20px !important;
+            }
+
+            .greeting {
+                font-size: 22px !important;
+            }
+
+            .congrats-text {
+                font-size: 26px !important;
+            }
+
+            .cta-button {
+                padding: 14px 32px !important;
+                font-size: 14px !important;
+            }
+
+            .footer {
+                padding: 20px !important;
+            }
+
+            .logo-img {
+                height: 36px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="email-wrapper">
+        <tr>
+            <td align="center" style="padding: 24px 16px;">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600"
+                    class="email-container">
+
+                    <!-- ======== HEADER: LOGOS ======== -->
+                    <tr>
+                        <td class="header-bar">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="header-table">
+                                <tr>
+                                    <td align="left" width="50%">
+                                        <img src="../public/nexus.png" alt="Nexus Club" class="logo-img"
+                                            style="height:68px;">
+                                    </td>
+                                    <td align="right" width="50%">
+                                        <img src="../public/pes.png" alt="PES University" class="logo-img"
+                                            style="height:68px;">
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- ======== VIOLET TAPE STRIPE ======== -->
+                    <tr>
+                        <td class="tape-stripe"></td>
+                    </tr>
+
+                    <!-- ======== BODY CONTENT ======== -->
+                    <tr>
+                        <td class="content-area">
+
+                            <!-- Status Badge -->
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                                <tr>
+                                    <td>
+                                        <span class="status-badge">✓ SHORTLISTED</span>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Greeting -->
+                            <h1 class="greeting" style="margin-top:24px;">
+                                Hey <span class="team-name">{{team_name}}</span>,
+                            </h1>
+
+                            <p class="congrats-text">You're In! 🎉</p>
+
+                            <p class="body-text">
+                                We've reviewed your application and your team has been <strong>shortlisted for NexJam
+                                    2026</strong> — the 10-hour research-driven hackathon by Nexus Club, Department of
+                                Computer Science.
+                            </p>
+
+                            <p class="body-text">
+                                Amongst all the applications, your team stood out. Now
+                                it's time to lock in your spot via completing the registration and payment of ₹500.
+                            </p>
+
+                            <!-- Hackathon Details Card -->
+                            <div class="info-card">
+                                <p class="info-card-title">// Event Details</p>
+                                <p class="info-row"><span class="info-label">Event:</span> <span
+                                        class="info-value">NexJam 2026</span></p>
+                                <p class="info-row"><span class="info-label">Format:</span> <span class="info-value">10
+                                        Hours | 4 Members | 1 Track</span></p>
+                                <p class="info-row"><span class="info-label">Date:</span> <span
+                                        class="info-value">22<sup>nd</sup> February 2026</span></p>
+                                <p class="info-row"><span class="info-label">Team No:</span> <span
+                                        class="info-value">{{team_no}}</span></p>
+                                <p class="info-row"><span class="info-label">Venue:</span> <span class="info-value">PESU
+                                        52</span></p>
+                            </div>
+
+                            <!-- ======== IMPORTANT RULES ======== -->
+                            <div
+                                style="background-color:#1a1a0a; border:2px solid #FFD700; border-left:5px solid #ef4444; padding:20px 24px; margin:28px 0;">
+                                <p
+                                    style="font-family:'Courier New',Courier,monospace; font-size:12px; font-weight:900; letter-spacing:3px; text-transform:uppercase; color:#ef4444; margin:0 0 4px 0;">
+                                    ⚠ IMPORTANT RULES
+                                </p>
+                                <p
+                                    style="font-family:'Courier New',Courier,monospace; font-size:10px; color:#FFD700; letter-spacing:1px; text-transform:uppercase; margin:0 0 16px 0;">
+                                    Read carefully — non-compliance may lead to disqualification
+                                </p>
+
+                                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    <tr>
+                                        <td style="padding:8px 0; border-bottom:1px solid rgba(255,215,0,0.15);">
+                                            <span
+                                                style="display:inline-block; background-color:#ef4444; color:#fff; font-family:'Courier New',monospace; font-weight:900; font-size:10px; width:20px; height:20px; line-height:20px; text-align:center; margin-right:10px;">1</span>
+                                            <span
+                                                style="font-family:'Courier New',Courier,monospace; font-size:13px; color:#e4e4e7;">
+                                                You may <strong style="color:#FFD700;">start your project on Saturday
+                                                    itself</strong> — come prepared with ideas &amp; setup ready.
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:8px 0; border-bottom:1px solid rgba(255,215,0,0.15);">
+                                            <span
+                                                style="display:inline-block; background-color:#ef4444; color:#fff; font-family:'Courier New',monospace; font-weight:900; font-size:10px; width:20px; height:20px; line-height:20px; text-align:center; margin-right:10px;">2</span>
+                                            <span
+                                                style="font-family:'Courier New',Courier,monospace; font-size:13px; color:#e4e4e7;">
+                                                <strong style="color:#ffffff;">Dress appropriately.</strong> Smart
+                                                casuals or comfortable coding attire — keep it clean and presentable.
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:8px 0; border-bottom:1px solid rgba(255,215,0,0.15);">
+                                            <span
+                                                style="display:inline-block; background-color:#ef4444; color:#fff; font-family:'Courier New',monospace; font-weight:900; font-size:10px; width:20px; height:20px; line-height:20px; text-align:center; margin-right:10px;">3</span>
+                                            <span
+                                                style="font-family:'Courier New',Courier,monospace; font-size:13px; color:#e4e4e7;">
+                                                <strong style="color:#ef4444;">No sprays, deodorants, or strong
+                                                    fragrances</strong> — it's a closed venue, be considerate of others.
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:8px 0; border-bottom:1px solid rgba(255,215,0,0.15);">
+                                            <span
+                                                style="display:inline-block; background-color:#ef4444; color:#fff; font-family:'Courier New',monospace; font-weight:900; font-size:10px; width:20px; height:20px; line-height:20px; text-align:center; margin-right:10px;">4</span>
+                                            <span
+                                                style="font-family:'Courier New',Courier,monospace; font-size:13px; color:#e4e4e7;">
+                                                <strong style="color:#ffffff;">Bring your own laptop, charger &amp;
+                                                    essentials.</strong> We'll handle the rest.
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:8px 0;">
+                                            <span
+                                                style="display:inline-block; background-color:#ef4444; color:#fff; font-family:'Courier New',monospace; font-weight:900; font-size:10px; width:20px; height:20px; line-height:20px; text-align:center; margin-right:10px;">5</span>
+                                            <span
+                                                style="font-family:'Courier New',Courier,monospace; font-size:13px; color:#e4e4e7;">
+                                                <strong style="color:#FFD700;">Remember your team number!</strong> It
+                                                helps us with faster check-in &amp; registration on the day.
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <!-- Next Steps -->
+                            <p class="steps-title">// What's Next</p>
+
+                            <div class="step-row">
+                                <span class="step-number">1</span>
+                                Click the button below to go to the confirmation portal
+                            </div>
+                            <div class="step-row">
+                                <span class="step-number">2</span>
+                                Fill in your team details &amp; member info
+                            </div>
+                            <div class="step-row">
+                                <span class="step-number">3</span>
+                                Complete the registration payment
+                            </div>
+                            <div class="step-row">
+                                <span class="step-number">4</span>
+                                Show up. Ship code. Win glory.
+                            </div>
+
+                            <!-- CTA Button -->
+                            <div class="cta-wrapper">
+                                <!--[if mso]>
+                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" style="height:52px;v-text-anchor:middle;width:300px;" arcsize="0%" fillcolor="#7c3aed" stroke="f">
+                  <v:textbox inset="0,0,0,0">
+                    <center style="color:#ffffff;font-family:'Courier New',monospace;font-size:16px;font-weight:bold;text-transform:uppercase;">COMPLETE REGISTRATION →</center>
+                  </v:textbox>
+                </v:roundrect>
+                <![endif]-->
+                                <a href="https://example.com" target="_blank" class="cta-button">
+                                    Complete Registration →
+                                </a>
+                            </div>
+                            <p class="cta-subtext">↑ This link will take you to the confirmation portal</p>
+
+                            <!-- Urgency Bar -->
+                            <div class="urgency-bar">
+                                <p class="urgency-text">⚠ Deadline: End of Day</p>
+                                <p class="urgency-detail">Unconfirmed spots will be given to waitlisted teams</p>
+                            </div>
+
+                            <hr class="divider">
+
+                            <p class="body-text" style="font-size:12px;">
+                                If you have any questions, reply to this email or reach out to us on
+                                <a href="https://instagram.com/nexus.club"
+                                    style="color:#a855f7;text-decoration:none;">Instagram</a>.
+                                <br><br>
+                                See you at NexJam. Build something that doesn't crash — or crash it
+                                <em>spectacularly</em>.
+                            </p>
+
+                        </td>
+                    </tr>
+
+                    <!-- ======== FOOTER ======== -->
+                    <tr>
+                        <td class="footer">
+                            <p class="footer-brand">NEXJAM</p>
+                            <p class="footer-tagline">10 Hours. 4 Friends. Infinite Fun.</p>
+                            <p class="footer-links">
+                                <a href="https://nexjam.vercel.app">Website</a> &nbsp;·&nbsp;
+                                <a href="https://instagram.com/nexus.club">Instagram</a> &nbsp;·&nbsp;
+                                <a href="https://github.com/Nexus-PESU">GitHub</a>
+                            </p>
+                            <p class="footer-copy">
+                                © 2026 Nexus Club — Department of Computer Science, PES University.
+                                <br>You're receiving this because you applied to NexJam 2026.
+                            </p>
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
